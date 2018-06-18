@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+
     /**
      * INDEX : Display a listing of the resource.
      *
@@ -13,9 +14,24 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms=\App\Rooms::all();
-        return view('roomindex',compact('rooms'));
+        $rooms=\App\Room::with('bed_type')->get();
+        return view('roomindex',compact('rooms', 'bed_types'));
     }
+
+    /**
+     * SHOW : Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+
+       $room = \App\Room::with('bed_type','bathroom_type','view')->find($id);
+        return view('roomshow', compact('room', 'bed_types','bathroom_types','views'));
+    }
+
     /**
      * CREATE : Show the form for creating a new resource.
      *
@@ -37,16 +53,6 @@ class RoomController extends Controller
         //
     }
 
-    /**
-     * SHOW : Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * EDIT : Show the form for editing the specified resource.

@@ -1,0 +1,53 @@
+
+
+
+
+roomindex {
+	max-width: 60vw;
+	min-width: 30vw;
+}
+.roomname a,
+.roomname a:link,
+.roomname a:visited,
+.roomname a:active
+{
+    color: #000;
+    text-decoration: none;
+}
+
+.roomname a:hover {
+    color: #555;
+    text-decoration: none;
+}
+
+.roominfo a,
+.roominfo a:link,
+.roominfo a:visited,
+.roominfo a:active
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.roominfo a:hover {
+    color: #bbb;
+    text-decoration: none;
+}
+
+
+
+
+
+.roombook a,
+.roombook a:link,
+.roombook a:visited,
+.roombook a:active
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.roombook a:hover {
+    color: #bbb;
+    text-decoration: none;
+}

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 
-Route::resource('room','RoomcontrollerController');
+Route::resource('room','RoomController');
 
 
 
