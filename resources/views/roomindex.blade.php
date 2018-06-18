@@ -9,7 +9,7 @@
 			<div class="row">
 				<div class="col-md-2"> </div>
 				<div class="col-md-8">
-					<h2>Room list<h2>
+					<h2>Room list</h2>
 					<table class="table table-striped ">
 
 					<thead>
@@ -32,7 +32,7 @@
 							<td>@if ($room ['is_suite'] == 1)
 									Suite
 								@else 
-									Standaard
+									Standard
 								@endif   </td>
 							<td>(
 
@@ -46,16 +46,26 @@
 								@endif  
 							</td>
 							<td>{{$room['price']}} &euro;</td>
-							<td class="text-right roominfo btn btn-primary"><a href="{{action('RoomController@show', $room['id'])}}">Voir</a></td>
+							<td class="text-right roominfo btn btn-primary btn-md"><a href="{{action('RoomController@show', $room['id'])}}">Voir</a></td>
 						</tr>
 					@endforeach
 
 					</tbody>
 					</table>
-					
+						
+					<!-- insert pagination code here -->
+
 				</div>
+				<div class="col-md-3"> </div>
+				<div class="col-md-8">
+					<!-- insert pagination code here -->
+					{{ $rooms->links() }}
+				</div>
+
 			</div> <!-- end row -->
 		</div> <!-- end container -->
+
+
 	</div> <!-- end wrapper -->
 
 @endsection

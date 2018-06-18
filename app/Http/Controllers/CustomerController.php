@@ -4,36 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class CustomerController extends Controller
 {
-
     /**
-     * INDEX : Display a listing of the resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $rooms=\App\Room::with('bed_type')->paginate(15);
-        return view('roomindex',compact('rooms', 'bed_types'));
+        $customers=\App\Customer::paginate(15);
+        return view('customerindex',compact('customers'));
     }
 
     /**
-     * SHOW : Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-
-       $room = \App\Room::with('bed_type','bathroom_type','view')->find($id);
-        return view('roomshow', compact('room', 'bed_types','bathroom_types','views'));
-    }
-
-    /**
-     * CREATE : Show the form for creating a new resource.
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -43,7 +28,7 @@ class RoomController extends Controller
     }
 
     /**
-     * STORE : Store a newly created resource in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -53,9 +38,19 @@ class RoomController extends Controller
         //
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
     /**
-     * EDIT : Show the form for editing the specified resource.
+     * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -66,7 +61,7 @@ class RoomController extends Controller
     }
 
     /**
-     * UPDATE : Update the specified resource in storage.
+     * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -78,7 +73,7 @@ class RoomController extends Controller
     }
 
     /**
-     * DESTROY : Remove the specified resource from storage.
+     * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

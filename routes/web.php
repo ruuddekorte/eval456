@@ -20,4 +20,10 @@ Route::get('/', function () {
 Route::resource('room','RoomController');
 
 
+Route::resource('booking','BookingController');
+
+
+Route::resource('customer','CustomerController');
+
+
 
