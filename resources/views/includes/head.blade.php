@@ -21,6 +21,7 @@
 
     <!-- CSS Bootstrap 4.0 -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">  
 
     <!-- CSS Custom Styles -->
     <link rel="stylesheet" href="{{asset('css/hotel.css')}}">

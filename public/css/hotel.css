@@ -63,3 +63,17 @@ header h1 a:hover {
     color: #bbb;
     text-decoration: none;
 }
+
+
+.mandatory {
+	font-weight: 900;
+	color: #FF002A;
+}
+
+.form-label {
+	min-width: 200px;
+}
+
+.form-field {
+	min-width: 200px;
+}

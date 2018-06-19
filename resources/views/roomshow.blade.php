@@ -12,9 +12,6 @@
 					<h2>{{$room['name']}} room details<h2>
 					<table class="table table-striped ">
 
-
-
-
 					<tbody>
 
 						<tr>
@@ -72,12 +69,12 @@
 							<td>{{$room['area']}}			</td>
 						</tr>
 						<tr>
-							<td>price :	       				</td>
+							<td>price (per night):	       				</td>
 							<td>{{$room['price']}}&euro;	</td>
 						</tr>
 						<tr>
 							<td>&nbsp;	      				</td>
-							<td><div ><a href="{{action('RoomController@show', $room['id'])}}" class="roombook btn btn-success">Book this room</a></td>
+							<td><div ><a href="{{action('BookingController@create', $room['id'])}}" class="roombook btn btn-success">Book this room</a></td>
 						</tr>
 						<tr>
 							<td>{{$room['created_at']}}	   	</td>

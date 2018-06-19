@@ -26,6 +26,7 @@ class BookingController extends Controller
     public function create()
     {
         //
+        return view('bookingreservation');
     }
 
     /**
@@ -37,6 +38,25 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         //
+        $booking= new \App\Booking;
+        
+        $booking->customer_id=$request->get('customer_id');
+
+        $booking->room_id=$request->get('room_id');
+
+        $arrival_date=date_create($request->get('arrival_date'));
+        $format_a = date_format($arrival_date,"Y-m-d");
+        $booking->arrival_date = strtotime($format_a);
+        
+        $departure_date=date_create($request->get('departure_date'));
+        $format_d = date_format($departure_date,"Y-m-d");
+        $booking->departure_date = strtotime($format_d);
+        
+        $booking->booking_status_id=$request->get('booking_status_id');
+
+        $booking->save();
+        
+        return redirect('bookingindex')->with('success', 'Information has been added');
     }
 
     /**
