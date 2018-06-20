@@ -7,8 +7,8 @@
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2"> </div>
-				<div class="col-md-8">
+				<div class="col-md-1"> </div>
+				<div class="col-md-10">
 					<h2>Booking list</h2>
 					<br />
 
@@ -29,11 +29,15 @@
 
 					@foreach ($bookings as $booking)
 						<tr>
-							<td>{{$booking ['room_id']}}			</td>
-							<td>{{$booking ['customer_id']}}		</td>
-							<td>{{$booking ['arrival_date']}}		</td>
-							<td>{{$booking ['departure_date']}}		</td>
-							<td>{{$booking ['booking_status_id']}}	</td>
+							<td>{{$booking ['room_id']}} -			
+								{{$booking ['room']->name}}				</td>
+							<td>{{$booking ['customer_id']}} -			
+								{{$booking ['customer']->last_name}}, 			
+								{{$booking ['customer']->first_name}}	</td>
+							<td>{{$booking ['arrival_date']}}			</td>
+							<td>{{$booking ['departure_date']}}			</td>
+							<td>{{$booking ['booking_status_id']}} -			
+								{{$booking ['booking_status']->booking_status}}		</td>
 						</tr>
 					@endforeach
 

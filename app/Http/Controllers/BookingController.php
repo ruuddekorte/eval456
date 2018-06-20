@@ -13,8 +13,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings=\App\Booking::paginate(15);
-        return view('bookingindex',compact('bookings'));
+        $bookings=\App\Booking::with('room','customer','booking_status')->paginate(15);
+        return view('bookingindex',compact('bookings','rooms','customers','booking_statuses'));
     }
 
 
@@ -26,6 +26,7 @@ class BookingController extends Controller
     public function create()
     {
 		//find($id)
+
 		$rooms = \App\Room::orderBy('name','ASC')->get();
 		$customers = \App\Customer::orderBy('last_name','ASC')->get();
 		$booking_statuses = \App\Booking_status::orderBy('id','ASC')->get();

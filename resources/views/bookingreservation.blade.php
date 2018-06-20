@@ -21,11 +21,12 @@
                         <tbody>
       	
                             <tr>
-                                <td>
+                                <td>			
                                     <div class="form-group">
 										<label class="form-label" for="room_id">Room <span class="mandatory">*</span> : </label>
                                         <select id="room_id" class="form-field" name="room_id" required>
 	        	  							@foreach($rooms as $room)
+		        	  							<!-- selected="selected" -->
 										      	<option value="{{$room['id']}}">{{$room['name']}} ({{$room['id']}}) </option>
 											@endforeach
 										</select> 
@@ -73,7 +74,11 @@
                                         <label class="form-label" for="booking_status_id">Booking status <span class="mandatory">*</span> : </label>
                                         <select id="booking_status_id" class="form-field" name="booking_status_id" required>
 	        	  							@foreach($booking_statuses as $booking_status)
-										      	<option value="{{$booking_status['id']}}">{{$booking_status['booking_status']}}</option>
+										      	<option 
+										      	@if($booking_status['id']==1)
+										      		selected="selected"
+									      		@endif 
+										      	value="{{$booking_status['id']}}">{{$booking_status['booking_status']}}</option>
 											@endforeach
 										</select>     
                                     </div>

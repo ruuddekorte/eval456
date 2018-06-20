@@ -74,7 +74,7 @@
 						</tr>
 						<tr>
 							<td>&nbsp;	      				</td>
-							<td><div ><a href="{{action('BookingController@create', $room['id'])}}" class="roombook btn btn-success">Book this room</a></td>
+							<td><div ><a href="{{action('BookingController@create', $room['id'])}}" class="roombook btn btn-success">Book this room</a></td> 
 						</tr>
 						<tr>
 							<td>{{$room['created_at']}}	   	</td>

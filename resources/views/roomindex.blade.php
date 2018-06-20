@@ -46,7 +46,7 @@
 								@endif  
 							</td>
 							<td>{{$room['price']}} &euro;</td>
-							<td class="text-right roominfo btn btn-primary btn-md"><a href="{{action('RoomController@show', $room['id'])}}">Voir</a></td>
+							<td class="text-right roominfo btn btn-primary btn-md"><a href="{{action('RoomController@show', $room['id'])}}">Voir</a></td> 
 						</tr>
 					@endforeach
 
