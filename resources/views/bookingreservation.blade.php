@@ -41,18 +41,18 @@
    
                             <tr>
                                 <td>
-	                                <div class="form_group">
+	                                <div class="form_group arrival">
 	                                    <label class="form-label" for="arrival_date">Arrival date <span class="mandatory">*</span> : </label>
-	                                    <input type="text" id="arrival_date" class="form-field date datepicker" name="arrival_date" required>
+	                                    <input type="date" id="arrival_date" class="form-field date" name="arrival_date" required>
 	                                </div>
                             	</td>
                             </tr>
 
                             <tr>
                                 <td>
-	                                <div class="form_group">
+	                                <div class="form_group departure">
 	                                    <label class="form-label" for="departure_date">Departure date <span class="mandatory">*</span> : </label>
-	                                    <input type="text" id="departure_date" class="form-field date datepicker" name="departure_date" required>
+	                                    <input type="date" id="departure_date" class="form-field date" name="departure_date" required>
 	                                </div>
                                 </td>
                             </tr>
@@ -104,9 +104,6 @@
 
     </div> <!-- end container -->
 </div> <!-- end wrapper -->
-
-
-
 
 @endsection
 
