@@ -20,7 +20,9 @@
                 height: 100vh;
                 margin: 0;
             }
-
+            .splash {
+                text-align: center;	
+            }
             .full-height {
                 height: 100vh;
             }
@@ -78,6 +80,9 @@
             @endif
 
             <div class="content">
+            	<div class="splash">
+                	<img src="/img/hotel.png">
+            	</div>
                 <div class="title m-b-md">
                     Hotel California
                 </div>
@@ -86,8 +91,8 @@
                     <a href="/room">Room List</a>
                     <a href="/customer">Customer List</a>
                     <a href="/booking">Booking List</a>
-<!--                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
+                    <a href="/booking/create">Make Booking</a>
+                    <!-- <a href="https://github.com/laravel/laravel">GitHub</a> -->
                 </div>
             </div>
         </div>

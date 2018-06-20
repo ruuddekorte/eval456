@@ -47,10 +47,12 @@
 					<!-- insert pagination code here -->
 
 				</div>
-				<div class="col-md-3"> </div>
-				<div class="col-md-8">
+				<div class="col-md-4"> </div>
+				<div class="col-md-7">
+					<div> &nbsp; </div>  <!-- empty div inserted as spacer -->
 					<!-- insert pagination code here -->
-					{{ $bookings->links() }}
+					<div>{{ $bookings->links() }}</div>
+					<div> &nbsp; </div>  <!-- empty div inserted as spacer -->
 				</div>
 
 			</div> <!-- end row -->
