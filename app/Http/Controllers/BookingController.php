@@ -25,8 +25,12 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
-        return view('bookingreservation');
+		//find($id)
+		$rooms = \App\Room::orderBy('name','ASC')->get();
+		$customers = \App\Customer::orderBy('last_name','ASC')->get();
+		$booking_statuses = \App\Booking_status::orderBy('id','ASC')->get();
+        
+        return view('bookingreservation', compact ('rooms','customers','booking_statuses'));
     }
 
     /**
@@ -39,24 +43,20 @@ class BookingController extends Controller
     {
         //
         $booking= new \App\Booking;
-        
+
         $booking->customer_id=$request->get('customer_id');
 
         $booking->room_id=$request->get('room_id');
 
-        $arrival_date=date_create($request->get('arrival_date'));
-        $format_a = date_format($arrival_date,"Y-m-d");
-        $booking->arrival_date = strtotime($format_a);
-        
-        $departure_date=date_create($request->get('departure_date'));
-        $format_d = date_format($departure_date,"Y-m-d");
-        $booking->departure_date = strtotime($format_d);
-        
+        // temporary removed arrival date and departure date
+        $booking->arrival_date=$request->get('arrival_date');
+		$booking->departure_date=$request->get('arrival_date');
+
         $booking->booking_status_id=$request->get('booking_status_id');
 
         $booking->save();
         
-        return redirect('bookingindex')->with('success', 'Information has been added');
+        return redirect('booking')->with('success', 'Reservation has been added to the booking list');
     }
 
     /**
@@ -103,4 +103,21 @@ class BookingController extends Controller
     {
         //
     }
+
+    public function getCustomers($name)
+    {
+        $customers = DB::table('customers')->get();
+        $status = DB::table('booking_statuses')->get();
+        $room = DB::table('rooms')->get()->where('name', $name);
+        return View::make('booking')
+            ->with('customers', $customers)
+            ->with('status', $status)
+            ->with('name', $name);
+    }
+
+
+
+
+
+
 }

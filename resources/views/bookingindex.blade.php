@@ -11,13 +11,6 @@
 				<div class="col-md-8">
 					<h2>Booking list</h2>
 					<br />
-					<!-- for reporting success of adding booking to the list -->
-					@if (\Session::has('success'))   
-						<div class="alert alert-success">
-							<p>{{ \Session::get('success') }}</p>
-						</div>
-						<br />
-					@endif
 
 					<table class="table table-striped ">
 

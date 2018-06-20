@@ -1,0 +1,12 @@
+
+bookingController.txt
+
+temporary removed lines from bookingController.php
+
+	$arrival_date=date_create($request->get('arrival_date'));
+	$format_a = date_format($arrival_date,"Y-m-d");
+	$booking->arrival_date = strtotime($format_a);
+
+	$departure_date=date_create($request->get('departure_date'));
+	$format_d = date_format($departure_date,"Y-m-d");
+	$booking->departure_date = strtotime($format_d);
